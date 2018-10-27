@@ -21,9 +21,9 @@
     <% @organizations.each do |organization| %>
       <tr>
         <td><%= organization.name %></td>
-        <td><%= organization.website %></td>
+        <td><a href="http://<%= organization.website %>"><%= organization.website %></a></td>
         <td><%= organization.mission %></td>
-        <td><%= organization.memberlink %></td>
+        <td><a href="http://<%= organization.memberlink %>"><%= organization.memberlink %></a></td>
         <td><%= organization.city %></td>
         <td><%= organization.issues %></td>
         <td><%= organization.gender %></td>
@@ -39,3 +39,4 @@
 <br>
 
 <%= link_to 'New Organization', new_organization_path %>
+<%= link_to 'Back', root_path %>
