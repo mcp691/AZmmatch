@@ -17,10 +17,11 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create organization" do
     assert_difference('Organization.count') do
-      post organizations_url, params: { organization: { city: @organization.city, gender: @organization.gender, issues: @organization.issues, memberlink: @organization.memberlink, mission: @organization.mission, name: @organization.name, race: @organization.race, website: @organization.website } }
+      post organizations_url, params: { organization: { user_org: @organization.user_org, city: @organization.city, gender: @organization.gender, issues: @organization.issues, memberlink: @organization.memberlink, mission: @organization.mission, name: @organization.name, race: @organization.race, website: @organization.website } }
     end
 
     assert_redirected_to organization_url(Organization.last)
+    assert_equal 'Organization was successfully created.', flash[:notice]
   end
 
   test "should show organization" do
@@ -34,8 +35,8 @@ class OrganizationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update organization" do
-    patch organization_url(@organization), params: { organization: { city: @organization.city, gender: @organization.gender, issues: @organization.issues, memberlink: @organization.memberlink, mission: @organization.mission, name: @organization.name, race: @organization.race, website: @organization.website } }
-    assert_redirected_to organization_url(@organization)
+    patch organization_url(@organization), params: { organization: { user_org: @organization.user_org, city: @organization.city, gender: @organization.gender, issues: @organization.issues, memberlink: @organization.memberlink, mission: @organization.mission, name: @organization.name, race: @organization.race, website: @organization.website } }
+    @organization.reload
   end
 
   test "should destroy organization" do
