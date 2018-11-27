@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2018_11_07_232156) do
 
   create_table "organizations", force: :cascade do |t|
+    t.integer "user_org_id"
     t.string "name"
     t.string "website"
     t.text "mission"
@@ -23,11 +24,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_232156) do
     t.string "race"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "static_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_org_id"], name: "index_organizations_on_user_org_id"
   end
 
   create_table "user_orgs", force: :cascade do |t|

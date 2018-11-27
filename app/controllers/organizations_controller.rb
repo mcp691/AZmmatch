@@ -25,6 +25,7 @@ class OrganizationsController < ApplicationController
   # POST /organizations.json
   def create
     @organization = Organization.new(organization_params)
+    @organization.user_org = current_user_org
 
     respond_to do |format|
       if @organization.save
@@ -69,6 +70,6 @@ class OrganizationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def organization_params
-      params.require(:organization).permit(:name, :website, :mission, :memberlink, :city, :issues, :gender, :race)
+      params.require(:organization).permit(:user_org, :name, :website, :mission, :memberlink, :city, :issues, :gender, :race)
     end
 end
