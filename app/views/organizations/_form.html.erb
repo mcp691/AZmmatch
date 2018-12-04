@@ -12,42 +12,47 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <p>What is the name of your organization?</p>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :website %>
+    <p>What is your website?</p>
     <%= form.text_field :website %>
   </div>
 
   <div class="field">
-    <%= form.label :mission %>
+    <p>What is your mission statement?</p>
     <%= form.text_area :mission %>
   </div>
 
   <div class="field">
-    <%= form.label :memberlink %>
+    <p>Link for becoming a member or volunteer</p>
     <%= form.text_field :memberlink %>
   </div>
 
   <div class="field">
-    <%= form.label :city %>
+    <p>Other information you want people to have:</p>
+    <%= form.text_area :other %>
+  </div>
+
+  <div class="field">
+    <p>Town or city, state, and zipcode</p>
     <%= form.text_field :city %>
   </div>
 
   <div class="field">
-    <%= form.label :issues %>
+    <p>Issues</p>
     <%= form.text_area :issues %>
   </div>
 
   <div class="field">
-    <%= form.label :gender %>
+    <p>Gender/Sexuality</p>
     <%= form.text_field :gender %>
   </div>
 
   <div class="field">
-    <%= form.label :race %>
+    <p>Racial Identity</p>
     <%= form.text_field :race %>
   </div>
 

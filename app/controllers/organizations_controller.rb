@@ -1,5 +1,8 @@
 class OrganizationsController < ApplicationController
   before_action :set_organization, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user_org!, only: [:create, :edit, :update, :new, :destroy]
+
+  protect_from_forgery with: :exception
 
   # GET /organizations
   # GET /organizations.json
@@ -70,6 +73,6 @@ class OrganizationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def organization_params
-      params.require(:organization).permit(:user_org, :name, :website, :mission, :memberlink, :city, :issues, :gender, :race)
+      params.require(:organization).permit(:user_org, :name, :website, :mission, :memberlink, :other, :city, :issues, :gender, :race)
     end
 end

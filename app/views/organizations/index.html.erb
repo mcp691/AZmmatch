@@ -21,10 +21,10 @@
     <% @organizations.each do |organization| %>
       <tr>
         <td><%= organization.name %></td>
-        <td><a href="http://<%= organization.website %>"><%= organization.website %></a></td>
+        <td><a href="<%= organization.website %>"><%= organization.website %></a></td>
         <td><%= organization.mission %></td>
-        <td><a href="http://<%= organization.memberlink %>"><%= organization.memberlink %></a></td>
-        <td><%= organization.city %></td>
+        <td><a href="<%= organization.memberlink %>"><%= organization.memberlink %></a></td>
+        <td><a target="_blank" href="https://www.google.com/maps/place/<%= organization.city %>, AZ"><%= organization.city + ", " + "AZ" %></a></td>
         <td><%= organization.issues %></td>
         <td><%= organization.gender %></td>
         <td><%= organization.race %></td>
@@ -38,5 +38,5 @@
 
 <br>
 
-<%= link_to 'New Organization', new_organization_path %>
+<%= link_to 'Do you host an organization?', new_organization_path %>
 <%= link_to 'Back', root_path %>

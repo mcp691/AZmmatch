@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_232156) do
     t.string "website"
     t.text "mission"
     t.string "memberlink"
+    t.text "other"
     t.string "city"
     t.text "issues"
     t.string "gender"
