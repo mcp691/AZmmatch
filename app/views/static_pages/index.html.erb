@@ -1,0 +1,14 @@
+<div class="survey col-md-10 col-lg-8">
+  <h1>Arizona Movement Match</h1>
+  <%= link_to "All Organizations", organizations_path %>
+  <% if user_org_signed_in? %>
+    <%= link_to "Logout", destroy_user_org_session_path,method: :delete %>
+  <% else %>
+  <%= link_to "Login", new_user_org_session_path %>
+  <% end %>
+</div>
+
+<div class="tech-slideshow">
+  <div class="mover-1"></div>
+  <div class="mover-2"></div>
+</div>

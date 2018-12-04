@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +14,20 @@
  *= require_tree .
  *= require_self
  */
+=======
+/* Front Survey */
+
+.survey {
+  background-color: lightgray;
+  text-align: center;
+  margin: 20%;
+  padding: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  .survey {
+    margin: auto !important;
+    width: 800px;
+  }
+}
+>>>>>>> e8a78154a7098735df2e13a1e43a76d9c75aeefb
