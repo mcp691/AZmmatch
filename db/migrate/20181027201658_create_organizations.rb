@@ -6,6 +6,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :website
       t.text :mission
       t.string :memberlink
+      t.text :other
       t.string :city
       t.text :issues
       t.string :gender

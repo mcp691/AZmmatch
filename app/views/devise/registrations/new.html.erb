@@ -4,14 +4,14 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <p>What's the best e-mail address to contact you by?</p>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <p>Your Movement Match Password</p>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <small>(<%= @minimum_password_length %> characters minimum)</small>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
