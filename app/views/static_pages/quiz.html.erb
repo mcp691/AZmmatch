@@ -1,0 +1,7 @@
+
+<%= form_with(url: organizations_path, method: 'get', local: true) do |form| %>
+<%= form.select :q, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], prompt: "---Select All Issues That Apply---" %>
+<%= form.submit 'Search', class: "btn btn-light" %>
+<% end %>
+
+<%= link_to 'Back', root_path %>
