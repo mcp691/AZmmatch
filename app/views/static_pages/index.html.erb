@@ -1,6 +1,7 @@
 <div class="survey">
   <h1>Arizona Movement Match</h1>
   <%= link_to "All Organizations", organizations_path %>
+  <%= link_to "Take The Quiz Now!", static_pages_quiz_path %>
   <% if user_org_signed_in? %>
     <%= link_to "Logout", destroy_user_org_session_path,method: :delete %>
   <% else %>

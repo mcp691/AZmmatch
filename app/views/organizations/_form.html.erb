@@ -42,18 +42,66 @@
   </div>
 
   <div class="field">
-    <p>Issues</p>
-    <%= form.text_area :issues %>
+    <p>My organization works on the following issues</p>
+    <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], prompt: "---Select All Issues That Apply---",  :multiple => true %>
   </div>
 
-  <div class="field">
-    <p>Gender/Sexuality</p>
-    <%= form.text_field :gender %>
-  </div>
+  <h4>If you are seeking to recruit people with any of the following identities, you can check off any of the boxes below. If you work with anyone and everyone, please answer "anyone" for each of the following questions.</h4>
 
   <div class="field">
     <p>Racial Identity</p>
-    <%= form.text_field :race %>
+    <%= form.select :race, ["Anyone", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"] %>
+  </div>
+
+  <div class="field">
+    <p>Ability</p>
+    <%= form.select :ability, ["Anyone", "Physical Disability", "Mental Health Disabliity"] %>
+  </div>
+
+  <div class="field">
+    <p>Age</p>
+    <%= form.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"] %>
+  </div>
+
+  <div class="field">
+    <p>Religion or Religious Background</p>
+    <%= form.select :religion, ["Anyone", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"] %>
+  </div>
+
+  <div class="field">
+    <p>Class Background</p>
+    <%= form.select :class_background, ["Anyone", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"] %>
+  </div>
+
+  <div class="field">
+    <p>Gender & Sexuality</p>
+    <%= form.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"] %>
+  </div>
+
+  <div class="field">
+    <p>Occupation</p>
+    <%= form.select :occupation, ["Anyone", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"] %>
+  </div>
+
+  <div class="field">
+    <p>Immigration Status</p>
+    <%= form.select :immigration_status, ["Anyone", "Refugee", "Immigrant"] %>
+  </div>
+
+  <div class="field">
+    <p>Incarceration Status</p>
+    <%= form.select :incarceration_status, ["Anyone", "Formerly or Currently Incarcerated/Family of Incarcerated People"] %>
+  </div>
+
+  <div class="field">
+    <p>Housing Status</p>
+    <%= form.select :housing_status, ["Anyone", "Tenant", "Homeless"] %>
+  </div>
+
+  <h4>How much do you need your members or volunteers to commit?</h4>
+  <div class="field">
+    <p>My organization is seeking members and volunteers who will commit at least a few hours</p>
+    <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"] %>
   </div>
 
   <div class="actions">
