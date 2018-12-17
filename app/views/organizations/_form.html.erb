@@ -1,110 +1,112 @@
-<%= form_with(model: organization, local: true) do |form| %>
+<div class="container-fluid col-md-4">
+  <%= form_with(model: organization, local: true) do |form| %>
   <% if organization.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
 
-      <ul>
+    <ul>
       <% organization.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
-    <p>What is the name of your organization?</p>
-    <%= form.text_field :name %>
+    What is the name of your organization?
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div class="field">
-    <p>What is your website?</p>
-    <%= form.text_field :website %>
+    What is your website?
+    <%= form.text_field :website, class: "form-control" %>
   </div>
 
   <div class="field">
-    <p>What is your mission statement?</p>
-    <%= form.text_area :mission %>
+    What is your mission statement?
+    <%= form.text_area :mission, class: "form-control", rows: "6" %>
   </div>
 
   <div class="field">
-    <p>Link for becoming a member or volunteer</p>
-    <%= form.text_field :memberlink %>
+    Link for becoming a member or volunteer
+    <%= form.text_field :memberlink, class: "form-control" %>
   </div>
 
   <div class="field">
-    <p>Other information you want people to have:</p>
-    <%= form.text_area :other %>
+    Other information you want people to have:
+    <%= form.text_area :other, class: "form-control", rows: "4" %>
   </div>
 
   <div class="field">
-    <p>Town or city, state, and zipcode</p>
-    <%= form.text_field :city %>
+    Town/city and zipcode
+    <%= form.text_field :city, class: "form-control" %>
   </div>
 
   <div class="field">
-    <p>My organization works on the following issues</p>
-    <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], prompt: "---Select All Issues That Apply---",  :multiple => true %>
+    My organization works on the following issues
+    <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
   </div>
 
   <h4>If you are seeking to recruit people with any of the following identities, you can select any of the options below. If you work with anyone and everyone, please answer "Anyone" for each of the following questions.</h4>
 
   <div class="field">
-    <p>Racial Identity</p>
-    <%= form.select :race, ["Anyone", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"] %>
+    Racial Identity
+    <%= form.select :race, ["Anyone", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Ability</p>
-    <%= form.select :ability, ["Anyone", "Physical Disability", "Mental Health Disabliity"] %>
+    Ability
+    <%= form.select :ability, ["Anyone", "Physical Disability", "Mental Health Disabliity"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Age</p>
-    <%= form.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"] %>
+    Age
+    <%= form.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Religion or Religious Background</p>
-    <%= form.select :religion, ["Anyone", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"] %>
+    Religion or Religious Background
+    <%= form.select :religion, ["Anyone", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Class Background</p>
-    <%= form.select :class_background, ["Anyone", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"] %>
+    Class Background
+    <%= form.select :class_background, ["Anyone", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Gender & Sexuality</p>
-    <%= form.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"] %>
+    Gender & Sexuality
+    <%= form.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Occupation</p>
-    <%= form.select :occupation, ["Anyone", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"] %>
+    Occupation
+    <%= form.select :occupation, ["Anyone", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Immigration Status</p>
-    <%= form.select :immigration_status, ["Anyone", "Refugee", "Immigrant"] %>
+    Immigration Status
+    <%= form.select :immigration_status, ["Anyone", "Refugee", "Immigrant"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Incarceration Status</p>
-    <%= form.select :incarceration_status, ["Anyone", "Formerly or Currently Incarcerated/Family of Incarcerated People"] %>
+    Incarceration Status
+    <%= form.select :incarceration_status, ["Anyone", "Formerly or Currently Incarcerated/Family of Incarcerated People"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <p>Housing Status</p>
-    <%= form.select :housing_status, ["Anyone", "Tenant", "Homeless"] %>
+    Housing Status
+    <%= form.select :housing_status, ["Anyone", "Tenant", "Homeless"], {}, class: "custom-select" %>
   </div>
 
   <h4>How much do you need your members or volunteers to commit?</h4>
   <div class="field">
-    <p>My organization is seeking members and volunteers who will commit at least a few hours</p>
-    <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"] %>
+    My organization is seeking members and volunteers who will commit at least a few hours
+    <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-light" %>
   </div>
-<% end %>
+  <% end %>
+</div>
