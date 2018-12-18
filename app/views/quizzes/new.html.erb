@@ -1,0 +1,19 @@
+<%= form_for @quiz do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"] %>
+  </div>
+
+  <div class="actions"><%= f.submit "Done!" %></div>
+<% end %>

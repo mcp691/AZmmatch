@@ -7,13 +7,7 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.json
   def index
-    if params[:q]
-      search_term = params[:q]
-      @organizations = Organization.search(search_term).all
-      # return our filtered list here
-    else
-      @organizations = Organization.all
-    end
+    @organizations = Organization.search(params[:quiz])
   end
 
   # GET /organizations/1
