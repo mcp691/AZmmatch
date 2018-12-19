@@ -17,7 +17,7 @@ private
 
 # Never trust parameters from the scary internet, only allow the white list through.
 def quiz_params
-  params.require(:quiz).permit(:name, :city, {:issues => []}, :gender, :race, :ability, :age, :religion, :class_background, :occupation, :immigration_status, :incarceration_status, :housing_status, :commitment)
+  params.require(:quiz).permit(:name, :city, {:issues => []}, :gender, {:skills => []}, :race, :ability, :age, :religion, :class_background, :occupation, :immigration_status, :incarceration_status, :housing_status, :commitment)
 end
 
 end

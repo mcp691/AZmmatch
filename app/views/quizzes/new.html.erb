@@ -1,19 +1,80 @@
-<%= form_for @quiz do |f| %>
+<div class="container-fluid col-md-4">
+  <%= form_for @quiz do |f| %>
+
+<!-- TODO Add quiz questions to each field -->
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    Have an idea of the name of the organization that you're looking for?
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"] %>
+    Question about <%= f.label :issues %><br>
+    <%= f.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
   </div>
 
   <div class="field">
-    <%= f.label :age %><br>
-    <%= f.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"] %>
+    Question about <%= f.label :skill %><br>
+    <%= f.select :skills, ["organizing", "direct action", "social work", "education", "visual art", "multilingual", "computer", "public speaking", "accouting", "legal work", "medical", "research", "writing & editing", "press & media", "experience with the naturalization process for immigration", "outreach", "admin support", "graphic design", "spanish language", "grant writing", "social media", "canvassing", "coding", "cantonese language", "nepali language"], {}, :multiple => true, class: "custom-select", size: "10" %>
   </div>
 
-  <div class="actions"><%= f.submit "Done!" %></div>
-<% end %>
+  <div class="field">
+    Question about <%= f.label :race %><br>
+    <%= f.select :race, ["Anyone", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :ability %><br>
+    <%= f.select :ability, ["Anyone", "Physical Disability", "Mental Health Disabliity"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :age %><br>
+    <%= f.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :religion %><br>
+    <%= f.select :religion, ["Anyone", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :class_background %><br>
+    <%= f.select :class_background, ["Anyone", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :gender %><br>
+    <%= f.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconfing", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :occupation %><br>
+    <%= f.select :occupation, ["Anyone", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :immigration_status %><br>
+    <%= f.select :immigration_status, ["Anyone", "Refugee", "Immigrant"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :incarceration_status %><br>
+    <%= f.select :incarceration_status, ["Anyone", "ferly or Currently Incarcerated/Family of Incarcerated People"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    Question about <%= f.label :housing_status %><br>
+    <%= f.select :housing_status, ["Anyone", "Tenant", "Homeless"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="field">
+    I'm willing to commit a few hours...
+    <%= f.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select" %>
+  </div>
+
+  <div class="actions"><%= f.submit "Match Me!", class: "btn btn-primary" %></div>
+  <% end %>
+  <br>
+  <%= link_to 'Back', root_path %>
+</div>

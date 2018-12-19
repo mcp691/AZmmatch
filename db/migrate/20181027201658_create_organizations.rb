@@ -10,6 +10,7 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.string :city
       t.text :issues
       t.string :gender
+      t.string :skills
       t.string :race
       t.string :ability
       t.string :age

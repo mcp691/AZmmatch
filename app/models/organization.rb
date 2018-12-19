@@ -8,4 +8,8 @@ class Organization < ApplicationRecord
     self.issues.delete('""').delete('[]').sub(',', '')
   end
 
+  def skills_clean
+    self.skills.delete('""').delete('[]').sub(',', '')
+  end
+
 end
