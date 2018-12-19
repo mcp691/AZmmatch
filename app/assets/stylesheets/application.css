@@ -1,3 +1,14 @@
+html{
+  height: 100%;
+  width: 100%;
+}
+
+body {
+    position:fixed;
+    height: 100%;
+    top:0;
+    width: 100%;
+}
 /* Front Survey */
 
 .survey {
@@ -6,6 +17,7 @@
   margin: 20%;
   padding: 15px;
   position: relative;
+
 }
 
 .survey h1 {
@@ -17,6 +29,14 @@
   1px 1px 0 #FFD700;
 }
 
+@media only screen and (max-width: 768px) {
+  .survey {
+    margin: auto !important;
+    width: 768px !important;
+  }
+}
+
+/* Buttons */
 ul {
   margin-bottom: 0!important;
 }
@@ -31,23 +51,8 @@ li, #Organizations {
   padding-left: 0px;
   padding-right: 16%;
 }
-
-@media only screen and (max-width: 800px) {
-  .survey {
-    margin: auto !important;
-    width: 800px;
-  }
-}
-
-body {
-  background-image: url("/assets/homepage_background.JPG");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
+/* end buttons */
+/* slideshow */
 .tech-slideshow {
   height: 200px;
   max-width: 800px;
@@ -56,6 +61,7 @@ body {
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
+
 
 .tech-slideshow > div {
   height: 200px;
@@ -86,5 +92,130 @@ body {
 @keyframes moveSlideshow {
   100% {
     transform: translateX(-66.6666%);
+  }
+}
+/* end slideshow */
+/* end Front Survey */
+
+/* Grid images */
+.images,
+img{
+  max-width: 100%;
+  object-fit: contain;
+  /* padding: 2%; */
+}
+/* end grid images */
+
+/* images fade */
+.item {
+  position: relative;
+}
+
+.item
+.top1,
+.top2,
+.top3,
+.top4,
+.top5 {
+	position: absolute;
+}
+
+.item .top1 {
+	animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 5s;
+	animation-direction: alternate;
+}
+.item .top2 {
+	animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 12s;
+	animation-direction: alternate;
+}
+.item .top3 {
+	animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 7s;
+	animation-direction: alternate;
+}
+.item .top4 {
+	animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 18s;
+	animation-direction: alternate;
+}
+.item .top5 {
+	animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 23s;
+	animation-direction: alternate;
+}
+
+
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/* end images fade */
+
+/* grid layout  */
+.squares {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: block;
+  padding: 1%;
+
+}
+
+.item,
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* end grid layout  */
+
+/* breakpoints */
+.images {
+  display: grid;
+  grid-auto-rows: minmax(10px, auto);
+  grid-gap: 10px;
+  grid-auto-flow: dense;
+  width: 100%;
+}
+
+@media screen and (min-width: 320px){
+  .images {
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px){
+  .images {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (min-width: 992px){
+  .images {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
   }
 }
