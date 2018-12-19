@@ -11,6 +11,15 @@ class CreateOrganizations < ActiveRecord::Migration[5.2]
       t.text :issues
       t.string :gender
       t.string :race
+      t.string :ability
+      t.string :age
+      t.string :religion
+      t.string :class_background
+      t.string :occupation
+      t.string :immigration_status
+      t.string :incarceration_status
+      t.string :housing_status
+      t.string :commitment
 
       t.timestamps
     end

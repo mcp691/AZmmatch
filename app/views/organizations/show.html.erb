@@ -27,17 +27,57 @@
 
 <p>
   <strong>Issues:</strong>
-  <%= @organization.issues %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @organization.gender %>
+  <%= @organization.issues_clean %>
 </p>
 
 <p>
   <strong>Race:</strong>
   <%= @organization.race %>
+</p>
+
+<p>
+  <strong>Ability:</strong>
+  <%= @organization.ability %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @organization.age %>
+</p>
+
+<p>
+  <strong>Religion:</strong>
+  <%= @organization.religion %>
+</p>
+
+<p>
+  <strong>Class Background:</strong>
+  <%= @organization.class_background %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @organization.occupation %>
+</p>
+
+<p>
+  <strong>Immigration Status:</strong>
+  <%= @organization.immigration_status %>
+</p>
+
+<p>
+  <strong>Incarceration Status:</strong>
+  <%= @organization.incarceration_status %>
+</p>
+
+<p>
+  <strong>Housing Status:</strong>
+  <%= @organization.housing_status %>
+</p>
+
+<p>
+  <strong>Commitment:</strong>
+  <%= @organization.commitment %>
 </p>
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |

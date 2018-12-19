@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2018_11_07_232156) do
     t.text "issues"
     t.string "gender"
     t.string "race"
+    t.string "ability"
+    t.string "age"
+    t.string "religion"
+    t.string "class_background"
+    t.string "occupation"
+    t.string "immigration_status"
+    t.string "incarceration_status"
+    t.string "housing_status"
+    t.string "commitment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_org_id"], name: "index_organizations_on_user_org_id"
