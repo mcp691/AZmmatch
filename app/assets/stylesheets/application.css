@@ -4,12 +4,11 @@ html {
 }
 
 body {
-    position:fixed;
     height: 100%;
     top:0;
     width: 100%;
 }
-/* Front Survey */
+/* Front main-container */
 
 /* Main Container */
 
@@ -22,7 +21,7 @@ body {
   position: relative;
 }
 
-.survey {
+.main-container {
   background-color: lightgray;
   text-align: center;
   margin: 20%;
@@ -31,7 +30,7 @@ body {
 
 }
 
-.survey h1 {
+.main-container h1 {
   color: #800000;
   text-shadow:
   -1px -1px 0 #FFD700,
@@ -41,14 +40,14 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .survey {
+  .main-container {
     margin: auto !important;
     width: 768px !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .survey {
+  .main-container {
     margin: auto !important;
     width: 768px !important;
   }
@@ -125,7 +124,7 @@ h1 {
 }
 
 /* end slideshow */
-/* end Front Survey */
+/* end Front main-container */
 
 /* Grid images */
 .images,
@@ -139,6 +138,7 @@ img{
 /* images fade */
 .item {
   position: relative;
+  z-index: -10;
 }
 
 .item
