@@ -1,6 +1,7 @@
 html {
   height: 100%;
   width: 100%;
+
 }
 
 body {
@@ -211,8 +212,7 @@ img{
   width: 100%;
   top: 0;
   display: block;
-  padding: 1%;
-
+  overflow: hidden;
 }
 
 .item,
@@ -230,6 +230,7 @@ img {
   grid-gap: 10px;
   grid-auto-flow: dense;
   width: 100%;
+  margin: auto;
 }
 
 @media screen and (min-width: 320px){
@@ -247,5 +248,11 @@ img {
 @media screen and (min-width: 992px){
   .images {
     grid-template-columns: repeat(6, minmax(200px, 1fr));
+  }
+}
+
+@media only screen and (device-width: 1024px) and (device-height: 1366px){
+  .images {
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
   }
 }
