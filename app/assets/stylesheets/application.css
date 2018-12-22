@@ -1,13 +1,13 @@
 html {
   height: 100%;
   width: 100%;
-
 }
 
 body {
     height: 100%;
     top:0;
     width: 100%;
+    position: fixed;
 }
 /* Front main-container */
 
@@ -28,7 +28,8 @@ body {
   margin: 20%;
   padding: 15px;
   position: relative;
-
+  height: 300px;
+  overflow: auto;
 }
 
 .main-container h1 {
@@ -132,7 +133,6 @@ h1 {
 img{
   max-width: 100%;
   object-fit: contain;
-  /* padding: 2%; */
 }
 /* end grid images */
 
