@@ -3,24 +3,7 @@
 <h1 class="text-center">Organizations</h1>
 
 <div class="row">
-  <% @organizations.each do |organization| %>
-  <div class="card org-container" style="width: 30rem;">
-    <h2 class="card-header"><%= link_to organization.name, organization%></h2>
-    <div class="card-body">
-      <p><a href="<%= organization.website %>"><%= organization.website %></a></p>
-      <p><%= organization.mission %></p>
-      <% if organization.memberlink != "" %>
-      <p>Click here to become a member of this organization: <a target="_blank" href="<%= organization.memberlink %>"><%= organization.memberlink %></a></p>
-      <% else %>
-      <p>Visit website for membership information.</p>
-      <% end %>
-      <p><a target="_blank" href="https://www.google.com/maps/place/<%= organization.city %> AZ"><%= organization.city + " " + "AZ" %></a></p>
-      <%= link_to 'Show', organization %>
-      <%= link_to 'Edit', edit_organization_path(organization) %>
-      <%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  </div>
-  <% end %>
+<%= render partial: @organizations %>
 </div>
 
 <br>
