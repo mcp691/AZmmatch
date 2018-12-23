@@ -1,77 +1,72 @@
-<div class="container-fluid col-md-4">
+<div class="container-fluid col-sm-10 col-md-7">
   <%= form_for @quiz do |f| %>
 
-  <!-- TODO Add quiz questions to each field -->
+  <!-- TODO Optimize Issues and Skills fields -->
 
   <div class="field">
-    <h4>Do you have an idea of the name of the organization that you're looking for?</h4>
-    <%= f.text_field :name, class: 'form-control', placeholder: "Search name of organization" %>
+    <h4>Which issue are you interested in working on?</h4>
+    <%= f.select :issues, ["--Issues--", "Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, class: "custom-select" %>
   </div>
 
   <div class="field">
-    <h4>Which issues are you interested in working on?</h4>
-    <%= f.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
-  </div>
-
-  <div class="field">
-    <h4>Which skills would you like to offer? (optional)</h4>
-    <%= f.select :skills, ["organizing", "direct action", "social work", "education", "visual art", "multilingual", "computer", "public speaking", "accouting", "legal work", "medical", "research", "writing & editing", "press & media", "experience with the naturalization process for immigration", "outreach", "admin support", "graphic design", "spanish language", "grant writing", "social media", "canvassing", "coding", "cantonese language", "nepali language"], {}, :multiple => true, class: "custom-select", size: "10" %>
+    <h4>What is your strongest skill that you would you like to offer?</h4>
+    <%= f.select :skills, ["--Skills--", "Organizing", "Direct action", "Social work", "Education", "Visual art", "Multilingual", "Computer", "Public speaking", "Accouting", "Legal work", "Medical", "Research", "Writing & editing", "Press & media", "Experience with the naturalization process for immigration", "Outreach", "Admin support", "Graphic design", "Spanish language", "Grant writing", "Social media", "Canvassing", "Coding", "Cantonese language", "Nepali language"], {}, class: "custom-select" %>
   </div>
   <hr>
   <h4 align="left">Some groups are organized based on different identities (like gender or religion). If you are interested in working with people who share a particular identity with you, select the information below. Otherwise leave this blank and you'll be matched based on other information.</h4>
-  
+
   <div class="row">
     <div class="col-md-6">
       <div class="field">
         <br>
-        <%= f.select :race, ["Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"], {:include_blank => '-- Racial Identity --'}, class: "custom-select" %>
+        <%= f.select :race, ["-- Racial Identity --", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :ability, ["Physical Disability", "Mental Health Disabliity"], {:include_blank => '-- Ability --'}, class: "custom-select" %>
+        <%= f.select :ability, ["-- Ability --", "Physical Disability", "Mental Health Disabliity"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :age, ["Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"], {:include_blank => '-- Age Group --'}, class: "custom-select" %>
+        <%= f.select :age, ["-- Age Group --", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :religion, ["Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"], {:include_blank => '-- Religious Background --'}, class: "custom-select" %>
+        <%= f.select :religion, ["-- Religious Background --", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :class_background, ["Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"], {:include_blank => '-- Class Background --'}, class: "custom-select" %>
+        <%= f.select :class_background, ["-- Class Background --", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"], {}, class: "custom-select" %>
       </div>
     </div>
 
     <div class="col-md-6">
       <div class="field">
         <br>
-        <%= f.select :gender, ["LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconfing", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"], {:include_blank => '-- Gender Identity/Sexuality --'}, class: "custom-select" %>
+        <%= f.select :gender, ["-- Gender Identity/Sexuality --", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconfing", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :occupation, ["Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"], {:include_blank => '-- Occupation --'}, class: "custom-select" %>
+        <%= f.select :occupation, ["-- Occupation --", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :immigration_status, ["Refugee", "Immigrant"], {:include_blank => '-- Immigration Status --'}, class: "custom-select" %>
+        <%= f.select :immigration_status, ["-- Immigration Status --", "Refugee", "Immigrant"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :incarceration_status, ["Formerly or Currently Incarcerated/Family of Incarcerated People"], {:include_blank => '-- Incarceration Status --'}, class: "custom-select" %>
+        <%= f.select :incarceration_status, ["-- Incarceration Status --", "Formerly or Currently Incarcerated/Family of Incarcerated People"], {}, class: "custom-select" %>
       </div>
 
       <div class="field">
         <br>
-        <%= f.select :housing_status, ["Tenant", "Homeless"], {:include_blank => '-- Housing Status --'}, class: "custom-select" %>
+        <%= f.select :housing_status, ["-- Housing Status --", "Tenant", "Homeless"], {}, class: "custom-select" %>
       </div>
     </div>
   </div>
