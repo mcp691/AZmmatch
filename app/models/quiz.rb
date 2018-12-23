@@ -1,5 +1,10 @@
 class Quiz < ApplicationRecord
 
+  before_save do
+    self.issues.gsub!(/[\[\]\"]/, "") if attribute_present?("issues")
+    self.skills.gsub!(/[\[\]\"]/, "") if attribute_present?("skills")
+  end
+
   def organizations
     @organizations ||= find_organizations
   end
@@ -7,9 +12,9 @@ class Quiz < ApplicationRecord
 private
 
   def find_organizations # Parameters of Quiz answers and Organization matches
-    organizations = Organization.where("name like ? OR issues like ? OR gender like ? OR skills like ? OR race like ? OR ability like ? OR age like ? OR religion like ? OR class_background like ? OR occupation like ? OR immigration_status like ? OR incarceration_status like ? OR housing_status like ? OR commitment like ?",
+    organizations = Organization.where("issues LIKE ? OR gender LIKE ? OR skills LIKE ? OR race LIKE ? OR ability LIKE ? OR age LIKE ? OR religion LIKE ? OR class_background LIKE ? OR occupation LIKE ? OR immigration_status LIKE ? OR incarceration_status LIKE ? OR housing_status LIKE ? OR commitment LIKE ?",
 
-    "%#{name}%", "%#{issues}%", "%#{gender}%", "%#{skills}%", "%#{race}%", "%#{ability}%", "%#{age}%", "%#{religion}%", "%#{class_background}%", "%#{occupation}%", "%#{immigration_status}%", "%#{incarceration_status}%", "%#{housing_status}%", "%#{commitment}%")
+    "%#{issues.delete('","').delete('[]').sub(',', '').strip}%", "%#{gender}%", "%#{skills}%", "%#{race}%", "%#{ability}%", "%#{age}%", "%#{religion}%", "%#{class_background}%", "%#{occupation}%", "%#{immigration_status}%", "%#{incarceration_status}%", "%#{housing_status}%", "%#{commitment}%")
 
     organizations
   end
