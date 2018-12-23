@@ -1,13 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="main-container">
+  <p id="notice"><%= notice %></p>
 
-<h1 class="text-center">Organizations</h1>
+  <h1 class="text-center">Organizations</h1>
 
-<div class="row">
-<%= render partial: @organizations %>
+  <div class="row">
+    <%= render partial: @organizations %>
+  </div>
+
+  <br>
+
+  <%= link_to 'Do you host an organization?', new_organization_path %>
+  <br>
+  <%= link_to 'Back', root_path %>
 </div>
-
-<br>
-
-<%= link_to 'Do you host an organization?', new_organization_path %>
-<br>
-<%= link_to 'Back', root_path %>

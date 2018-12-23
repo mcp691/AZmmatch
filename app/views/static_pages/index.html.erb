@@ -1,14 +1,17 @@
-<div align="center" class="container-fluid">
-  <h1>Arizona Movement Match</h1>
-  <%= link_to "All Organizations", organizations_path %>
-  <%= link_to "Take The Quiz Now!", new_quiz_path %>
-  <% if user_org_signed_in? %>
-    <%= link_to "Logout", destroy_user_org_session_path,method: :delete %>
-  <% else %>
-  <%= link_to "Login", new_user_org_session_path %>
-  <% end %>
-  <div class="tech-slideshow">
-    <div class="mover-1"></div>
-    <div class="mover-2"></div>
+<body>
+  <div class="main-container">
+    <h1>Arizona Movement Match</h1>
+    <ul>
+        <li id="Organizations">
+        <%= button_to "All Organizations", organizations_path, class:"Organizations", type:"button", class:"btn btn-outline-light text-dark", :method => :get %></li>
+        <%= link_to "Take The Quiz Now!", new_quiz_path, class:"Quiz", type:"button", class:"btn btn-outline-light text-dark" %>
+        <% if user_org_signed_in? %>
+        <%= link_to "Logout", destroy_user_org_session_path, class:"btn btn-outline-light text-dark", method: :delete %>
+        <% else %>
+        <li id="Login">
+          <%= button_to "Login", new_user_org_session_path, class:"login", type:"button", class:"btn btn-outline-light text-dark" %>
+          <% end %>
+        </li>
+      </ul>
   </div>
-</div>
+</body>
