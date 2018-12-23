@@ -3,10 +3,10 @@
     <h1>Arizona Movement Match</h1>
     <ul>
         <li id="Organizations">
-        <%= button_to "All Organizations", organizations_path, class:"Organizations", type:"button", class:"btn btn-outline-light text-dark", :method => :get %></li>
-        <%= link_to "Take The Quiz Now!", new_quiz_path, class:"Quiz", type:"button", class:"btn btn-outline-light text-dark" %>
+        <%= button_to "All Organizations", organizations_path, type:"button", class:"btn btn-outline-light text-dark", :method => :get %></li>
+        <li><%= button_to "Take The Quiz Now!", new_quiz_path, type:"button", class:"btn btn-outline-light text-dark", :method => :get %></li>
         <% if user_org_signed_in? %>
-        <%= link_to "Logout", destroy_user_org_session_path, class:"btn btn-outline-light text-dark", method: :delete %>
+        <li><%= link_to "Logout", destroy_user_org_session_path, class:"btn btn-outline-light text-dark", method: :delete %></li>
         <% else %>
         <li id="Login">
           <%= button_to "Login", new_user_org_session_path, class:"login", type:"button", class:"btn btn-outline-light text-dark" %>

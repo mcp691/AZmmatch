@@ -222,12 +222,12 @@ img {
 }
 /* end grid layout  */
 
-<<<<<<< HEAD
 .org-container {
   display: inline-block;
   text-align: center;
   margin: 1% auto;
-=======
+}
+
 /* breakpoints */
 .images {
   display: grid;
@@ -260,5 +260,4 @@ img {
   .images {
     grid-template-columns: repeat(5, minmax(250px, 1fr));
   }
->>>>>>> King-of-Code-design
 }
