@@ -4,6 +4,7 @@
     <ul>
         <li id="Organizations">
         <%= button_to "All Organizations", organizations_path, class:"Organizations", type:"button", class:"btn btn-outline-light text-dark", :method => :get %></li>
+        <%= link_to "Take The Quiz Now!", new_quiz_path, class:"Quiz", type:"button", class:"btn btn-outline-light text-dark" %>
         <% if user_org_signed_in? %>
         <%= link_to "Logout", destroy_user_org_session_path, class:"btn btn-outline-light text-dark", method: :delete %>
         <% else %>

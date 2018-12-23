@@ -4,17 +4,21 @@ class Organization < ApplicationRecord
   validates :issues, presence: true
   validates :user_org, presence: true
 
+=begin
+  Use this code for when Quiz has been optimized for multiple selections
 
-  def self.search(search_term)
-    if Rails.env != "production"
-      Organization.where(["name || issues || mission LIKE ?", "%#{search_term}%"])
-    else
-      Organization.where(["name || issues || mission iLIKE ?", "%#{search_term}%"])
-    end
+  before_save do
+    self.issues.gsub!(/[\[\]\"]/, "") if attribute_present?("issues")
+    self.skills.gsub!(/[\[\]\"]/, "") if attribute_present?("skills")
   end
 
   def issues_clean
-    self.issues.delete('""').delete('[]').sub(',', '')
+    self.issues.delete('""').sub(',', '').strip
   end
+
+  def skills_clean
+    self.skills.delete('""').sub(',', '').strip
+  end
+=end
 
 end

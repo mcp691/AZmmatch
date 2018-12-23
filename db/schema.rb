@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_232156) do
+ActiveRecord::Schema.define(version: 2018_12_18_015757) do
 
   create_table "organizations", force: :cascade do |t|
     t.integer "user_org_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_232156) do
     t.string "city"
     t.text "issues"
     t.string "gender"
+    t.string "skills"
     t.string "race"
     t.string "ability"
     t.string "age"
@@ -35,6 +36,26 @@ ActiveRecord::Schema.define(version: 2018_11_07_232156) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_org_id"], name: "index_organizations_on_user_org_id"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.string "name"
+    t.string "city"
+    t.text "issues"
+    t.string "gender"
+    t.string "skills"
+    t.string "race"
+    t.string "ability"
+    t.string "age"
+    t.string "religion"
+    t.string "class_background"
+    t.string "occupation"
+    t.string "immigration_status"
+    t.string "incarceration_status"
+    t.string "housing_status"
+    t.string "commitment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_orgs", force: :cascade do |t|
