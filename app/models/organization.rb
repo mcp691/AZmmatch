@@ -4,6 +4,9 @@ class Organization < ApplicationRecord
   validates :issues, presence: true
   validates :user_org, presence: true
 
+=begin
+  Use this code for when Quiz has been optimized for multiple selections
+
   before_save do
     self.issues.gsub!(/[\[\]\"]/, "") if attribute_present?("issues")
     self.skills.gsub!(/[\[\]\"]/, "") if attribute_present?("skills")
@@ -16,5 +19,6 @@ class Organization < ApplicationRecord
   def skills_clean
     self.skills.delete('""').sub(',', '').strip
   end
+=end
 
 end

@@ -1,4 +1,4 @@
-<div class="container-fluid col-md-4">
+<div class="container-fluid col-sm-10 col-md-7">
   <%= form_with(model: organization, local: true) do |form| %>
   <% if organization.errors.any? %>
   <div id="error_explanation">
@@ -12,15 +12,18 @@
   </div>
   <% end %>
 
-  <div class="field">
-    What is the name of your organization?
-    <%= form.text_field :name, class: "form-control" %>
+  <div class="row">
+    <div class="field col-md-6">
+      What is the name of your organization?
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="field col-md-6">
+      What is your website?
+      <%= form.text_field :website, class: "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    What is your website?
-    <%= form.text_field :website, class: "form-control" %>
-  </div>
 
   <div class="field">
     What is your mission statement?
@@ -38,7 +41,7 @@
   </div>
 
   <div class="field">
-    Town/city and zipcode
+    Town, city, or zipcode
     <%= form.text_field :city, class: "form-control" %>
   </div>
 
@@ -113,14 +116,12 @@
       <hr>
       <h5>We're seeking members who can commit at least a few hours...</h5>
       <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select form-control", aria_label: "With textarea" %>
-
     </div>
-
-    <div class="actions">
-      <br>
-      <%= form.submit class: "btn btn-primary" %>
-    </div>
-
-    <% end %>
   </div>
+  <br>
+  <div class="actions"><%= form.submit "Create Organization", class: "btn btn-primary" %></div>
+  <br>
+
+  <% end %>
+  <%= link_to 'Back', root_path %>
 </div>
