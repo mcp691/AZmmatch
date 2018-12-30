@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  width: 100%;
+  width: 100;
 }
 
 body {
@@ -9,46 +9,37 @@ body {
     width: 100%;
     position: fixed;
 }
-/* Front main-container */
 
 /* Main Container */
-
 
 .container-fluid {
   background-color: lightgray;
   margin: 5%;
   padding: 15px;
   position: relative;
-}
-
-.main-container {
-  background-color: lightgray;
-  text-align: center;
-  margin: 20%;
-  padding: 15px;
-  position: relative;
-  height: 300px;
+  max-height: 85%;
   overflow: auto;
 }
 
-.main-container h1 {
-  color: #800000;
-  text-shadow:
-  -1px -1px 0 #FFD700,
-  1px -1px 0 #FFD700,
-  -1px 1px 0 #FFD700,
-  1px 1px 0 #FFD700;
+.index-container {
+  background-color: lightgray;
+  text-align: center;
+  margin: 10% 20%;
+  padding: 15px;
+  position: relative;
+  height: 40%;
+  overflow: auto;
 }
 
 @media only screen and (max-width: 768px) {
-  .main-container {
+  .container-fluid {
     margin: auto !important;
     width: 768px !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .main-container {
+  .container-fluid {
     margin: auto !important;
     width: 768px !important;
   }
@@ -125,7 +116,7 @@ h1 {
 }
 
 /* end slideshow */
-/* end Front main-container */
+/* end Front container-fluid */
 
 /* Grid images */
 .images,
