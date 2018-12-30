@@ -7,10 +7,8 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.json
   def index
-    if params[:q]
-      search_term = params[:q]
-      @organizations = Organization.search(search_term).all
-      # return our filtered list here
+    if params[:quiz]
+      @organizations = Organization.search(params[:quiz])
     else
       @organizations = Organization.all
     end
@@ -79,6 +77,6 @@ class OrganizationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def organization_params
-      params.require(:organization).permit(:user_org, :name, :website, :mission, :memberlink, :other, :city, {:issues => []}, :gender, :race, :ability, :age, :religion, :class_background, :occupation, :immigration_status, :incarceration_status, :housing_status, :commitment)
+      params.require(:organization).permit(:user_org, :name, :website, :mission, :memberlink, :other, :city, {:issues => []}, :gender, {:skills => []}, :race, :ability, :age, :religion, :class_background, :occupation, :immigration_status, :incarceration_status, :housing_status, :commitment)
     end
 end

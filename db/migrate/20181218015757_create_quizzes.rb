@@ -1,12 +1,7 @@
-class CreateOrganizations < ActiveRecord::Migration[5.2]
+class CreateQuizzes < ActiveRecord::Migration[5.2]
   def change
-    create_table :organizations do |t|
-      t.references :user_org, foreign_key: true
+    create_table :quizzes do |t|
       t.string :name
-      t.string :website
-      t.text :mission
-      t.string :memberlink
-      t.text :other
       t.string :city
       t.text :issues
       t.string :gender

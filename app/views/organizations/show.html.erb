@@ -1,84 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid col-sm-10 col-md-7" align="center">
 
-<p>
-  <strong>Name:</strong>
-  <%= @organization.name %>
-</p>
+  <h2><%= @organization.name %></h2>
+  <p><a target="_blank" href="<%= @organization.website %>"><%= @organization.website %></a></p>
+  <p><%= @organization.mission %></p>
+  <% if @organization.memberlink != "" %>
+  <p>Click here to become a member of this organization: <a target="_blank" href="<%= @organization.memberlink %>"><%= @organization.memberlink %></a></p>
+  <% else %>
+  <p>Visit website for membership information.</p>
+  <% end %>
+  <p><a target="_blank" href="https://www.google.com/maps/place/<%= @organization.city %> AZ"><%= @organization.city + " " + "AZ" %></a></p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @organization.website %>
-</p>
-
-<p>
-  <strong>Mission:</strong>
-  <%= @organization.mission %>
-</p>
-
-<p>
-  <strong>Memberlink:</strong>
-  <%= @organization.memberlink %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @organization.city %>
-</p>
-
-<p>
-  <strong>Issues:</strong>
-  <%= @organization.issues_clean %>
-</p>
-
-<p>
-  <strong>Race:</strong>
-  <%= @organization.race %>
-</p>
-
-<p>
-  <strong>Ability:</strong>
-  <%= @organization.ability %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @organization.age %>
-</p>
-
-<p>
-  <strong>Religion:</strong>
-  <%= @organization.religion %>
-</p>
-
-<p>
-  <strong>Class Background:</strong>
-  <%= @organization.class_background %>
-</p>
-
-<p>
-  <strong>Occupation:</strong>
-  <%= @organization.occupation %>
-</p>
-
-<p>
-  <strong>Immigration Status:</strong>
-  <%= @organization.immigration_status %>
-</p>
-
-<p>
-  <strong>Incarceration Status:</strong>
-  <%= @organization.incarceration_status %>
-</p>
-
-<p>
-  <strong>Housing Status:</strong>
-  <%= @organization.housing_status %>
-</p>
-
-<p>
-  <strong>Commitment:</strong>
-  <%= @organization.commitment %>
-</p>
-
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
+  <%= link_to 'Edit', edit_organization_path(@organization) %> |
+  <%= link_to 'Back', organizations_path %>
+</div>
