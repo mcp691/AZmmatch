@@ -45,22 +45,6 @@ body {
   }
 }
 
-/* Buttons */
-ul {
-  margin-bottom: 0!important;
-}
-
-li, #Login {
-  display: inline-block;
-  padding-left: 10%;
-  padding-right: 8%;
-}
-
-li, #Organizations {
-  padding-left: 0px;
-  padding-right: 16%;
-}
-/* end buttons */
 /* slideshow */
 
 .custom-select:hover {
@@ -116,6 +100,7 @@ h1 {
 }
 
 /* end slideshow */
+
 /* end Front container-fluid */
 
 /* Grid images */
