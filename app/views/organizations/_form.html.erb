@@ -14,13 +14,13 @@
 
 <div class="row">
   <div class="field col-md-6">
-    What is the name of your organization?
-    <%= form.text_field :name, class: "form-control" %>
+    Name:
+    <%= form.text_field :name, class: "form-control", placeholder: "What is the name of your organization?" %>
   </div>
 
   <div class="field col-md-6">
-    What is your website?
-    <%= form.text_field :website, class: "form-control" %>
+    Your Website:
+    <%= form.text_field :website, class: "form-control", placeholder: "What is your organization's website?" %>
   </div>
 </div>
 
@@ -31,8 +31,8 @@
 </div>
 
 <div class="field">
-  Link for becoming a member or volunteer
-  <%= form.text_field :memberlink, class: "form-control" %>
+  Membership link:
+  <%= form.text_field :memberlink, class: "form-control", placeholder: "www.myorganization.com/join" %>
 </div>
 
 <div class="field">
@@ -45,14 +45,16 @@
   <%= form.text_field :city, class: "form-control" %>
 </div>
 
-<div class="field">
-  My organization works on the following issues
-  <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
-</div>
+<div class="row">
+    <div class="field col-lg-6">
+      My organization works on the following issues (Select all that apply):
+      <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
+    </div>
 
-<div class="field">
-  We would like members or volunteers with the following skills:
-  <%= form.select :skills, ["organizing", "direct action", "social work", "education", "visual art", "multilingual", "computer", "public speaking", "accouting", "legal work", "medical", "research", "writing & editing", "press & media", "experience with the naturalization process for immigration", "outreach", "admin support", "graphic design", "spanish language", "grant writing", "social media", "canvassing", "coding", "cantonese language", "nepali language"], {}, :multiple => true, class: "custom-select", size: "10" %>
+    <div class="field col-lg-6">
+      We want members with the following skills (Select all that apply):
+      <%= form.select :skills, ["organizing", "direct action", "social work", "education", "visual art", "multilingual", "computer", "public speaking", "accouting", "legal work", "medical", "research", "writing & editing", "press & media", "experience with the naturalization process for immigration", "outreach", "admin support", "graphic design", "spanish language", "grant writing", "social media", "canvassing", "coding", "cantonese language", "nepali language"], {}, :multiple => true, class: "custom-select", size: "10" %>
+    </div>
 </div>
 <hr>
 <h4>If you are seeking to recruit people with any of the following identities, you can select any of the options below. If you work with anyone and everyone, please answer "Anyone" for each of the following questions.</h4>
