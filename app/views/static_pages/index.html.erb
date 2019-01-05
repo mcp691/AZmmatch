@@ -5,6 +5,6 @@
     <% if user_org_signed_in? %>
       <%= button_to "Logout", destroy_user_org_session_path, class:"btn btn-outline-light text-dark", method: :delete %>
     <% else %>
-      <%= button_to "Login", new_user_org_session_path, class:"login", type:"button", class:"btn btn-outline-light text-dark" %>
+      <%= button_to "Login", new_user_org_session_path, type:"button", class:"btn btn-outline-light text-dark" %>
     <% end %>
 </div>
