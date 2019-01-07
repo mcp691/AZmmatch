@@ -28,7 +28,12 @@ body {
   padding: 15px;
   position: relative;
   height: 300px;
-  overflow: auto;
+  overflow-y: auto;
+}
+
+.quiz {
+  height: 500px;
+  overflow-y: auto;
 }
 
 .main-container h1 {
@@ -222,12 +227,11 @@ img {
 }
 /* end grid layout  */
 
-<<<<<<< HEAD
 .org-container {
   display: inline-block;
   text-align: center;
   margin: 1% auto;
-=======
+}
 /* breakpoints */
 .images {
   display: grid;
@@ -252,7 +256,14 @@ img {
 
 @media screen and (min-width: 992px){
   .images {
-    grid-template-columns: repeat(6, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
+  }
+}
+
+@media screen and (min-width: 1680px){
+  .images {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    height: 100%;
   }
 }
 
@@ -260,5 +271,4 @@ img {
   .images {
     grid-template-columns: repeat(5, minmax(250px, 1fr));
   }
->>>>>>> King-of-Code-design
 }
