@@ -1,128 +1,128 @@
 
-<div class="container-fluid col-md-6" id="_form">
-  <%= form_with(model: organization, local: true) do |form| %>
-  <% if organization.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
+<%= form_with(model: organization, local: true) do |form| %>
+<% if organization.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
 
-    <ul>
-      <% organization.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-
-  <div class="row">
-    <div class="field col-md-6">
-      What is the name of your organization?
-      <%= form.text_field :name, class: "form-control" %>
-    </div>
-
-    <div class="field col-md-6">
-      What is your website?
-      <%= form.text_field :website, class: "form-control" %>
-    </div>
-  </div>
-
-
-  <div class="field">
-    What is your mission statement?
-    <%= form.text_area :mission, class: "form-control", rows: "6" %>
-  </div>
-
-  <div class="field">
-    Link for becoming a member or volunteer
-    <%= form.text_field :memberlink, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    Other information you want people to have:
-    <%= form.text_area :other, class: "form-control", rows: "4" %>
-  </div>
-
-  <div class="field">
-    Town, city, or zipcode
-    <%= form.text_field :city, class: "form-control" %>
-  </div>
-
-  <div class="field">
-    My organization works on the following issues
-    <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
-  </div>
-
-  <div class="field">
-    We would like members or volunteers with the following skills:
-    <%= form.select :skills, ["organizing", "direct action", "social work", "education", "visual art", "multilingual", "computer", "public speaking", "accouting", "legal work", "medical", "research", "writing & editing", "press & media", "experience with the naturalization process for immigration", "outreach", "admin support", "graphic design", "spanish language", "grant writing", "social media", "canvassing", "coding", "cantonese language", "nepali language"], {}, :multiple => true, class: "custom-select", size: "10" %>
-  </div>
-  <hr>
-  <h4>If you are seeking to recruit people with any of the following identities, you can select any of the options below. If you work with anyone and everyone, please answer "Anyone" for each of the following questions.</h4>
-
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="field">
-        Racial Identity
-        <%= form.select :race, ["Anyone", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Ability
-        <%= form.select :ability, ["Anyone", "Physical Disability", "Mental Health Disabliity"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Age
-        <%= form.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Religion or Religious Background
-        <%= form.select :religion, ["Anyone", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Class Background
-        <%= form.select :class_background, ["Anyone", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"], {}, class: "custom-select" %>
-      </div>
-    </div>
-
-    <div class="col-lg-6">
-      <div class="field">
-        Gender & Sexuality
-        <%= form.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Occupation
-        <%= form.select :occupation, ["Anyone", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Immigration Status
-        <%= form.select :immigration_status, ["Anyone", "Refugee", "Immigrant"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Incarceration Status
-        <%= form.select :incarceration_status, ["Anyone", "Formerly or Currently Incarcerated/Family of Incarcerated People"], {}, class: "custom-select" %>
-      </div>
-
-      <div class="field">
-        Housing Status
-        <%= form.select :housing_status, ["Anyone", "Tenant", "Homeless"], {}, class: "custom-select" %>
-      </div>
-    </div>
-
-    <div class="col-lg-10">
-      <hr>
-      <h5>We're seeking members who can commit at least a few hours...</h5>
-      <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select form-control", aria_label: "With textarea" %>
-    </div>
-  </div>
-  <br>
-  <div class="actions"><%= form.submit "Create Organization", class: "btn btn-primary" %></div>
-  <br>
-
-  <% end %>
-  <%= link_to 'Back', root_path %>
+  <ul>
+    <% organization.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
 </div>
+<% end %>
+
+<div class="row">
+  <div class="field col-md-6">
+    Name:
+    <%= form.text_field :name, class: "form-control", placeholder: "What is the name of your organization?" %>
+  </div>
+
+  <div class="field col-md-6">
+    Your Website:
+    <%= form.text_field :website, class: "form-control", placeholder: "What is your organization's website?" %>
+  </div>
+</div>
+
+
+<div class="field">
+  What is your mission statement?
+  <%= form.text_area :mission, class: "form-control", rows: "6" %>
+</div>
+
+<div class="field">
+  Membership link:
+  <%= form.text_field :memberlink, class: "form-control", placeholder: "www.myorganization.com/join" %>
+</div>
+
+<div class="field">
+  Other information you want people to have:
+  <%= form.text_area :other, class: "form-control", rows: "4" %>
+</div>
+
+<div class="field">
+  Town, city, or zipcode
+  <%= form.text_field :city, class: "form-control" %>
+</div>
+
+<div class="row">
+    <div class="field col-lg-6">
+      My organization works on the following issues (Select all that apply):
+      <%= form.select :issues, ["Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, :multiple => true, class: "custom-select", size: "10" %>
+    </div>
+
+    <div class="field col-lg-6">
+      We want members with the following skills (Select all that apply):
+      <%= form.select :skills, ["organizing", "direct action", "social work", "education", "visual art", "multilingual", "computer", "public speaking", "accouting", "legal work", "medical", "research", "writing & editing", "press & media", "experience with the naturalization process for immigration", "outreach", "admin support", "graphic design", "spanish language", "grant writing", "social media", "canvassing", "coding", "cantonese language", "nepali language"], {}, :multiple => true, class: "custom-select", size: "10" %>
+    </div>
+</div>
+<hr>
+<h4>If you are seeking to recruit people with any of the following identities, you can select any of the options below. If you work with anyone and everyone, please answer "Anyone" for each of the following questions.</h4>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="field">
+      Racial Identity
+      <%= form.select :race, ["Anyone", "Black or African Heritage", "East Asian", "Pacific Islander", "South Asian", "Person of Color", "White", "Native American/Indigenous", "Latinx", "Arab"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Ability
+      <%= form.select :ability, ["Anyone", "Physical Disability", "Mental Health Disabliity"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Age
+      <%= form.select :age, ["Anyone", "Youth (under 18)", "Young Adult (18-35)", "Adult (over 18)", "Elder (over 65)"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Religion or Religious Background
+      <%= form.select :religion, ["Anyone", "Muslim", "Jewish", "Sikh", "Buddhist", "Hindu", "Christian", "Unitarian Universalist", "Atheist", "Quaker", "Other"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Class Background
+      <%= form.select :class_background, ["Anyone", "Person With Wealth", "Working Class", "Middle Class", "Poor or Low Income"], {}, class: "custom-select" %>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="field">
+      Gender & Sexuality
+      <%= form.select :gender, ["Anyone", "LGBT Queer", "Two Spirit", "LGBTQ+", "Transgender", "Gender Nonconforming", "Transgender", "Nonbinary", "Intersex", "Woman", "Man"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Occupation
+      <%= form.select :occupation, ["Anyone", "Educator", "Lawyer or Law Student", "Tipped Worker", "Restaurant Worker", "Farm Worker", "Domestic Worker", "Domestic Employer", "Retail Worker", "Gig Economy Worker", "Street Vendor", "Veteran or Family of Veteran", "Teamster", "Parent", "Student", "Clergy", "Sex Worker", "Artist", "Healthcare Worker"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Immigration Status
+      <%= form.select :immigration_status, ["Anyone", "Refugee", "Immigrant"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Incarceration Status
+      <%= form.select :incarceration_status, ["Anyone", "Formerly or Currently Incarcerated/Family of Incarcerated People"], {}, class: "custom-select" %>
+    </div>
+
+    <div class="field">
+      Housing Status
+      <%= form.select :housing_status, ["Anyone", "Tenant", "Homeless"], {}, class: "custom-select" %>
+    </div>
+  </div>
+
+  <div class="col-lg-10">
+    <hr>
+    <h5>We're seeking members who can commit at least a few hours...</h5>
+    <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select form-control", aria_label: "With textarea" %>
+  </div>
+</div>
+<br>
+<div class="actions"><%= form.submit "Submit", class: "btn btn-primary" %></div>
+<br>
+
+<% end %>
+<%= link_to 'Back', root_path %>

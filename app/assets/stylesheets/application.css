@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  width: 100%;
+  width: 100;
 }
 
 body {
@@ -9,22 +9,22 @@ body {
     width: 100%;
     position: fixed;
 }
-/* Front main-container */
 
 /* Main Container */
-
 
 .container-fluid {
   background-color: lightgray;
   margin: 5%;
   padding: 15px;
   position: relative;
+  max-height: 85%;
+  overflow: auto;
 }
 
-.main-container {
+.index-container {
   background-color: lightgray;
   text-align: center;
-  margin: 20%;
+  margin: 10% 20%;
   padding: 15px;
   position: relative;
   height: 300px;
@@ -36,45 +36,20 @@ body {
   overflow-y: auto;
 }
 
-.main-container h1 {
-  color: #800000;
-  text-shadow:
-  -1px -1px 0 #FFD700,
-  1px -1px 0 #FFD700,
-  -1px 1px 0 #FFD700,
-  1px 1px 0 #FFD700;
-}
-
 @media only screen and (max-width: 768px) {
-  .main-container {
+  .container-fluid {
     margin: auto !important;
     width: 768px !important;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .main-container {
+  .container-fluid {
     margin: auto !important;
     width: 768px !important;
   }
 }
 
-/* Buttons */
-ul {
-  margin-bottom: 0!important;
-}
-
-li, #Login {
-  display: inline-block;
-  padding-left: 10%;
-  padding-right: 8%;
-}
-
-li, #Organizations {
-  padding-left: 0px;
-  padding-right: 16%;
-}
-/* end buttons */
 /* slideshow */
 
 .custom-select:hover {
@@ -130,7 +105,8 @@ h1 {
 }
 
 /* end slideshow */
-/* end Front main-container */
+
+/* end Front container-fluid */
 
 /* Grid images */
 .images,
@@ -232,6 +208,7 @@ img {
   text-align: center;
   margin: 1% auto;
 }
+
 /* breakpoints */
 .images {
   display: grid;
