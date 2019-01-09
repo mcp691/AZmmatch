@@ -13,7 +13,7 @@ body {
 /* Main Container */
 
 .container-fluid {
-  background-color: lightgray;
+  background-color: #fef4ea;
   margin: 5%;
   padding: 15px;
   position: relative;
@@ -22,13 +22,18 @@ body {
 }
 
 .index-container {
-  background-color: lightgray;
+  background-color: #fef4ea;
   text-align: center;
   margin: 10% 20%;
   padding: 15px;
   position: relative;
   height: 300px;
   overflow-y: auto;
+}
+
+.index-container h1{
+  color: #ef5f5e;
+  background: white;
 }
 
 .quiz {
@@ -50,6 +55,39 @@ body {
   }
 }
 
+/* footer */
+.footer
+ul {
+  width: auto;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0px;
+}
+
+.footer
+li {
+  display: inline-block;
+}
+
+.footer
+li
+a {
+  color: #959595;
+}
+/* end footer */
+/* modal */
+.modal-content
+.modal-header
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .8em;
+
+}
+
+/* end modal */
 /* slideshow */
 
 .custom-select:hover {
@@ -234,6 +272,7 @@ img {
 @media screen and (min-width: 992px){
   .images {
     grid-template-columns: repeat(5, minmax(250px, 1fr));
+    height: 100%;
   }
 }
 
