@@ -1,6 +1,6 @@
-<div class="index-container col-sm-10 col-md-7">
+<div class="container-fluid col-sm-10 col-md-7" align="center">
   <h1>Arizona Movement Match</h1>
-    <%= button_to "Take The Quiz Now!", new_quiz_path, type:"button", class:"btn btn-outline-warning text-dark", :method => :get %><br>
+    <%= button_to "Take The Quiz Now!", new_quiz_path, type:"button", class:"btn btn-warning text-dark", :method => :get %><br>
     <%= button_to "All Organizations", organizations_path, type:"button", class:"btn btn-outline-warning text-dark", :method => :get %><br>
     <% if user_org_signed_in? %>
       <%= button_to "Logout", destroy_user_org_session_path, class:"btn btn-outline-warning text-dark", method: :delete %>
