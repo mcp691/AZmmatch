@@ -21,6 +21,7 @@ body {
   max-height: 85%;
   overflow: auto;
   margin-bottom: 0;
+  box-shadow: 0px 0px 20px;
 }
 
 .index-container {

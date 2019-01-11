@@ -10,6 +10,9 @@
   <% end %>
   <p><a target="_blank" href="https://www.google.com/maps/place/<%= @organization.city %> AZ"><%= @organization.city + " " + "AZ" %></a></p>
 
+  <% if current_user_org == @organization.user_org %>
   <%= link_to 'Edit', edit_organization_path(@organization) %> |
+  <%= link_to 'Delete', @organization, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <% end %>
   <%= link_to 'Back', organizations_path %>
 </div>

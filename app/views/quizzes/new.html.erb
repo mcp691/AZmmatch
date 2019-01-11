@@ -1,17 +1,13 @@
 <div class="container-fluid col-sm-10 col-md-7 quiz">
   <%= form_for @quiz do |f| %>
 
-  <!-- TODO Optimize Issues and Skills fields -->
-
   <div class="field">
     <h4>Which issue are you interested in working on?</h4>
     <%= f.select :issues, ["--Issues--", "Gun control", "Environmental Justice", "Freedom of speech", "Peace and Anti-war", "Reducing corporate money in politics", "Disability Justice", "Reproductive Rights and women's access to healthcare", "Climate Change", "Education", "Healthcare", "Housing and Gentrification", "Criminal Justice/Policing", "Prisons", "Food", "Transportation and Urban Planning", "Voting Rights, Civic Engagement, and Elections", "Economic Justice", "Artist Liberation", "Justice for LGBTQ+ People", "Immigration and Refguee Rights", "International Human Rights", "Racial Justice and Fighting White Supremacy", "Youth Power", "Targetting of Religious Groups", "The Democratic Party", "Domestic Violence", "Workers Rights", "Women's Rights", "Middle East Peace Work"], {}, class: "custom-select" %>
   </div>
 
-  <div class="field">
-    <h4>What is your strongest skill that you would you like to offer?</h4>
-    <%= f.select :skills, ["--Skills--", "Organizing", "Direct action", "Social work", "Education", "Visual art", "Multilingual", "Computer", "Public speaking", "Accouting", "Legal work", "Medical", "Research", "Writing & editing", "Press & media", "Experience with the naturalization process for immigration", "Outreach", "Admin support", "Graphic design", "Spanish language", "Grant writing", "Social media", "Canvassing", "Coding", "Cantonese language", "Nepali language"], {}, class: "custom-select" %>
-  </div>
+  <!-- TODO Make Location such as City and State an option for the Quiz -->
+
   <hr>
   <h4 align="left">Some groups are organized based on different identities (like gender or religion). If you are interested in working with people who share a particular identity with you, select the information below. Otherwise leave this blank and you'll be matched based on other information.</h4>
 
@@ -70,16 +66,20 @@
       </div>
     </div>
   </div>
-
-  <div class="input-group">
-    <div class="input-group-prepend field">
-      <span class="input-group-text">I'm willing to commit a few hours...</span>
+  <hr>
+  <div class="input-group row">
+    <div class="field col-lg-7">
+      <h4>What's the strongest skill that you can offer?</h4>
+      <%= f.select :skills, ["--Skills--", "Organizing", "Direct action", "Social work", "Education", "Visual art", "Multilingual", "Computer", "Public speaking", "Accouting", "Legal work", "Medical", "Research", "Writing & editing", "Press & media", "Experience with the naturalization process for immigration", "Outreach", "Admin support", "Graphic design", "Spanish language", "Grant writing", "Social media", "Canvassing", "Coding", "Cantonese language", "Nepali language"], {}, class: "custom-select" %>
+    </div>
+    <div class="field col-lg-5">
+      <h4>I'm willing to commit a few hours...</h4>
       <%= f.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select form-control", aria_label: "With textarea" %>
     </div>
   </div>
   <br>
-  <div class="actions"><%= f.submit "Match Me!", class: "btn btn-primary" %></div>
+  <div class="actions"><%= f.submit "Match Me!", class: "btn btn-warning btn-lg btn-block" %></div>
   <% end %>
   <br>
-  <%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path, class:"btn btn-outline-danger text-dark btn-lg btn-block" %>
 </div>
