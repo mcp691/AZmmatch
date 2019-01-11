@@ -12,13 +12,15 @@ body {
 
 /* Main Container */
 
-.container-fluid {
+.container-fluid,
+.box {
   background-color: #fef4ea;
   margin: 5%;
   padding: 15px;
   position: relative;
   max-height: 85%;
   overflow: auto;
+  margin-bottom: 0;
 }
 
 .index-container {
@@ -27,8 +29,9 @@ body {
   margin: 10% 20%;
   padding: 15px;
   position: relative;
-  height: 300px;
+  height: 20%;
   overflow-y: auto;
+  margin-bottom: 0;
 }
 
 .index-container h1{
@@ -62,7 +65,7 @@ ul {
   background-color: white;
   margin-top: 20px;
   margin-bottom: 0;
-  padding-bottom: 0px;
+  text-align: center;
 }
 
 .footer
@@ -86,8 +89,25 @@ button {
   padding: .8em;
 
 }
-
 /* end modal */
+/*  about modal */
+.modal-title {
+  color: #ef5f5e;
+}
+
+.modal-body
+h5 {
+  color: #f59d3e;
+}
+
+.modal-body
+p
+span {
+  color: #ef5f5e;
+  font-family: 'Roboto Slab', serif;
+  font-style: italic;
+}
+/*  about modal end  */
 /* slideshow */
 
 .custom-select:hover {
@@ -98,6 +118,11 @@ h1 {
   color: red;
 }
 
+/* sign_up page */
+.sign_up {
+  text-align: center;
+}
+/* sign_up page end */
 /* Home Page Slideshow */
 
 .tech-slideshow {
