@@ -13,8 +13,8 @@ body {
 /* Main Container */
 
 .container-fluid {
-  background-color: white;
-  margin: 7% auto;
+  background-color: #fef4ea;
+  margin: 5%;
   padding: 15px;
   position: relative;
   max-height: 85%;
@@ -23,14 +23,24 @@ body {
 }
 
 .index-container {
+  background-color: #fef4ea;
   display: flex;
   justify-content: space-between;
-  background-color: white;
   text-align: center;
   margin: 10%;
   position: relative;
-  height: 40%;
-  overflow: auto;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.index-container h1{
+  color: #ef5f5e;
+  background: white;
+}
+
+.quiz {
+  height: 500px;
+  overflow-y: auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -47,6 +57,39 @@ body {
   }
 }
 
+/* footer */
+.footer
+ul {
+  width: auto;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0px;
+}
+
+.footer
+li {
+  display: inline-block;
+}
+
+.footer
+li
+a {
+  color: #959595;
+}
+/* end footer */
+/* modal */
+.modal-content
+.modal-header
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .8em;
+
+}
+
+/* end modal */
 /* slideshow */
 
 .custom-select:hover {
@@ -230,7 +273,15 @@ img {
 
 @media screen and (min-width: 992px){
   .images {
-    grid-template-columns: repeat(6, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1680px){
+  .images {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    height: 100%;
   }
 }
 
