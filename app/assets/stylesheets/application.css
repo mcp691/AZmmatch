@@ -13,29 +13,22 @@ body {
 /* Main Container */
 
 .container-fluid {
-  background-color: lightgray;
-  margin: 5%;
+  background-color: #fef4ea;
+  margin: 7% auto;
   padding: 15px;
   position: relative;
   max-height: 85%;
   overflow: auto;
+  box-shadow: 0px 0px 20px;
 }
 
-.index-container {
-  background-color: lightgray;
-  text-align: center;
-  margin: 10% 20%;
-  padding: 15px;
-  position: relative;
-  height: 40%;
-  overflow: auto;
+.index-container h1{
+  color: #ef5f5e;
+  background: white;
 }
 
-@media only screen and (max-width: 768px) {
-  .container-fluid {
-    margin: auto !important;
-    width: 768px !important;
-  }
+.quiz {
+  overflow-y: auto;
 }
 
 @media only screen and (max-width: 768px) {
@@ -45,6 +38,46 @@ body {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .container-fluid {
+    margin: auto !important;
+    width: 768px !important;
+  }
+}
+
+/* footer */
+.footer
+ul {
+  width: auto;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 0;
+  padding-bottom: 0px;
+}
+
+.footer
+li {
+  display: inline-block;
+}
+
+.footer
+li
+a {
+  color: #959595;
+}
+/* end footer */
+/* modal */
+.modal-content
+.modal-header
+button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: .8em;
+
+}
+
+/* end modal */
 /* slideshow */
 
 .custom-select:hover {
@@ -228,7 +261,15 @@ img {
 
 @media screen and (min-width: 992px){
   .images {
-    grid-template-columns: repeat(6, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, minmax(250px, 1fr));
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 1680px){
+  .images {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    height: 100%;
   }
 }
 

@@ -9,8 +9,9 @@
       <p>Visit website for membership information.</p>
       <% end %>
       <p><a target="_blank" href="https://www.google.com/maps/place/<%= organization.city %> AZ"><%= organization.city + " " + "AZ" %></a></p>
-      <%= link_to 'Show', organization %>
-      <%= link_to 'Edit', edit_organization_path(organization) %>
-      <%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if current_user_org == organization.user_org %>
+      <%= link_to 'Edit', edit_organization_path(organization) %> |
+      <%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </div>
   </div>
