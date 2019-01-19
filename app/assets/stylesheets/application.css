@@ -12,34 +12,24 @@ body {
 
 /* Main Container */
 
-.container-fluid,
-.box {
+.container-fluid {
   background-color: #fef4ea;
-  margin: 5%;
+  margin: 7% auto;
   padding: 15px;
   position: relative;
   max-height: 85%;
   overflow: auto;
-  margin-bottom: 0;
   box-shadow: 0px 0px 20px;
-}
-
-.index-container {
-  background-color: #fef4ea;
   text-align: center;
-  margin: 10% 20%;
-  padding: 15px;
-  position: relative;
   height: 20%;
-  overflow-y: auto;
-  margin-bottom: 0;
 }
 
-.index-container h1{
+.container-fluid h1{
   color: #ef5f5e;
   background: white;
 }
 
+.new_organization,
 .quiz {
   height: 500px;
   overflow-y: auto;
@@ -108,8 +98,29 @@ span {
   font-family: 'Roboto Slab', serif;
   font-style: italic;
 }
+
+.modal-body
+.callout {
+  color: #ef5f5e;
+}
+
+.modal-header
+.close {
+  color: #f59d3e;
+}
+
+.modal-header
+.close:hover {
+  color: #f59d3e !important;
+}
+
+.modal-content
+.modal-body
+a {
+  color: #f59d3e;
+}
 /*  about modal end  */
-/* slideshow */
+/* slideshow
 
 .custom-select:hover {
   cursor: pointer;
