@@ -47,8 +47,22 @@ img {
 }
 
 #new_quiz {
-  height: 400px;
+  height: 600px;
   overflow-y: scroll;
+}
+
+#org_index {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+#org_show {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 @media only screen and (max-width: 768px) {

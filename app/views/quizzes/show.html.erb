@@ -1,8 +1,9 @@
-<div class="container-fluid col-sm-10 col-md-7">
-  <h1>Quiz Results</h1>
+<div class="container-fluid col-sm-10 col-md-12">
 
-  <%= render partial: @quiz.organizations %>
-
-  <br>
-  <%= link_to 'Back', root_path %>
+  <h1 class="text-center">Quiz Results</h1>
+  <%= link_to 'Back', root_path, class:"btn btn-outline-danger" %>
+  <%= link_to 'Do you host an organization?', new_organization_path, class:"btn btn-outline-warning text-dark" %>
+  <div class="row" id="org_show">
+    <%= render partial: @quiz.organizations %>
+  </div>
 </div>
