@@ -1,9 +1,9 @@
-<div class="container-fluid col-sm-10 col-md-7">
+<div class="container-fluid col-sm-10 col-md-12 box">
 
   <h1 class="text-center">Organizations</h1>
   <%= link_to 'Back', root_path, class:"btn btn-outline-danger" %>
   <%= link_to 'Do you host an organization?', new_organization_path, class:"btn btn-outline-warning text-dark" %>
-  <div class="row">
+  <div class="row" id="org_index">
     <%= render partial: @organizations %>
   </div>
 </div>

@@ -11,24 +11,58 @@ body {
 }
 
 /* Main Container */
+.logo {
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: -120px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 111px;
+  height: 123px;
+  z-index: 888;
+}
+
+.logo
+img {
+  padding: 10px;
+  background-color: #fef4ea;
+}
 
 .container-fluid {
   background-color: #fef4ea;
   margin: 7% auto;
   padding: 15px;
+  padding-top: 40px;
   position: relative;
   max-height: 85%;
   overflow: auto;
   box-shadow: 0px 0px 20px;
+  text-align: center;
+  height: 20%;
 }
 
-.index-container h1{
+.container-fluid h1{
   color: #ef5f5e;
   background: white;
 }
 
-.quiz {
-  overflow-y: auto;
+#new_quiz {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+#org_index {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+#org_show {
+  height: 600px;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 @media only screen and (max-width: 768px) {
@@ -52,7 +86,7 @@ ul {
   background-color: white;
   margin-top: 20px;
   margin-bottom: 0;
-  padding-bottom: 0px;
+  text-align: center;
 }
 
 .footer
@@ -76,18 +110,52 @@ button {
   padding: .8em;
 
 }
-
 /* end modal */
-/* slideshow */
-
-.custom-select:hover {
-  cursor: pointer;
+/*  about modal */
+.modal-title {
+  color: #ef5f5e;
 }
 
-h1 {
-  color: red;
+.modal-body
+h5 {
+  color: #f59d3e;
 }
 
+.modal-body
+p
+span {
+  color: #ef5f5e;
+  font-family: 'Roboto Slab', serif;
+  font-style: italic;
+}
+
+.modal-body
+.callout {
+  color: #ef5f5e;
+}
+
+.modal-header
+.close {
+  color: #f59d3e;
+}
+
+.modal-header
+.close:hover {
+  color: #f59d3e !important;
+}
+
+.modal-content
+.modal-body
+a {
+  color: #f59d3e;
+}
+/*  about modal end  */
+
+/* sign_up page */
+.sign_up {
+  text-align: center;
+}
+/* sign_up page end */
 /* Home Page Slideshow */
 
 .tech-slideshow {
