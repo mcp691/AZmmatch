@@ -46,6 +46,18 @@ img {
   background: white;
 }
 
+.btn-change{
+  border:0px;
+  box-shadow: 5px 5px 5px #ffc107;
+  box-shadow:0px 0px 0 100px #ffc107 inset;
+}
+.btn-change:hover{
+  -webkit-box-shadow:0px 0px 0 3px #ffc107 inset;
+  -webkit-transform: scale(1);
+  color: #ffc107 !important;
+  background-color: white !important;
+}
+
 #new_quiz {
   height: 600px;
   overflow-y: scroll;
@@ -150,10 +162,27 @@ a {
   color: #f59d3e;
 }
 /*  about modal end  */
+/*  login page */
+.form
+h2 {
+  color: #ef5f5e;
+}
 
+.field {
+  color: #f59d3e;
+}
+
+#user_org_email,
+#user_org_password,
+#user_org_password_confirmation {
+  width: 500px;
+}
+
+/*  end login page */
 /* sign_up page */
 .sign_up {
   text-align: center;
+  margin: auto;
 }
 /* sign_up page end */
 /* Home Page Slideshow */
