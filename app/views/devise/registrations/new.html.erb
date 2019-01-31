@@ -4,36 +4,35 @@
     <div class="mover-1"></div>
     <div class="mover-2"></div>
   </div>
-  <div class="sign_up">
+  <div class="sign_up col-sm-10 col-md-7">
     <h2>Sign up</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <p>What's the best e-mail address to contact you by?</p>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div align="center">
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail Address", class: "form-control" %>
+      </div>
+      <br>
+      <div class="field">
+        <% if @minimum_password_length %>
+        <small>(<%= @minimum_password_length %> characters minimum)</small>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "form-control" %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation", class: "form-control" %>
+      </div>
     </div>
-
-    <div class="field">
-      <p>Your Movement Match Password</p>
-      <% if @minimum_password_length %>
-      <small>(<%= @minimum_password_length %> characters minimum)</small>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
+    <br>
     <div class="actions">
-      <%= f.submit "Sign up" %>
+      <%= f.submit "Sign up", type:"button", class:"btn btn-warning text-white btn-lg btn-block btn-change" %>
     </div>
     <% end %>
-
+    <hr>
     <%= render "devise/shared/links" %>
-    <%= link_to 'Back', root_path %>
+    <%= link_to 'Back', root_path, class:"btn btn-outline-danger text-dark btn-lg btn-block" %>
   </div>
 </div>

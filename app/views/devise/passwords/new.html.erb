@@ -4,16 +4,16 @@
   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
     <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div align="center" class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter E-mail Address", class: "form-control" %>
     </div>
-
+    <br>
     <div class="actions">
-      <%= f.submit "Send me reset password instructions" %>
+      <%= f.submit "Send me reset password instructions", class:"btn btn-warning text-white btn-lg btn-block btn-change" %>
     </div>
+    <hr>
   <% end %>
 
   <%= render "devise/shared/links" %>
-  <%= link_to 'Back', root_path %>
+  <%= link_to 'Back', root_path, class:"btn btn-outline-danger text-dark btn-lg btn-block" %>
 </div>
