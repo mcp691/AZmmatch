@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Movement Match is a free-to-use directory for users to search locally for groups and organizations with whom they share common political and social interests in. This project is specifically for the Arizona directory.
 
-Things you may want to cover:
+### Ruby Verson
+2.5.0.
 
-* Ruby version
+### Clone Git Repo
+`$ git clone https://github.com/mcp691/AZmmatch`
 
-* System dependencies
+### Install Bundle
+`$ bundle install`
 
-* Configuration
+### Migrate Database
+`$ rails db:migrate`
 
-* Database creation
+### Run Local Server
+`$ rails s`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# More Coming Soon
