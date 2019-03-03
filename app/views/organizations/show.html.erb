@@ -11,7 +11,7 @@
   <% if @organization.city == "" %>
     <p>Inquire about location.</p>
   <% else %>
-    <p>Location: <%= @organization.city %> in Arizona.</p>
+    <p>Location: <%= @organization.city %></p>
   <% end %>
 
   <% if current_user_org == @organization.user_org %>
