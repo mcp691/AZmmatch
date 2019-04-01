@@ -174,7 +174,8 @@ h2 {
 }
 
 #user_org_email,
-#user_org_password {
+#user_org_password,
+#user_org_password_confirmation {
   width: 80%;
 }
 
@@ -182,6 +183,7 @@ h2 {
 /* sign_up page */
 .sign_up {
   text-align: center;
+  margin: auto;
 }
 /* sign_up page end */
 /* Home Page Slideshow */
