@@ -7,11 +7,13 @@
     <div align="center" class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter E-mail Address", class: "form-control" %>
     </div>
-    <br>
+
+<br>
     <div class="actions">
-      <%= f.submit "Send me reset password instructions", class:"btn btn-warning text-white btn-lg btn-block btn-change" %>
+      <%= f.submit "Send me reset password instructions", type:"button", class:"btn btn-warning text-white btn-lg btn-block btn-change"  %>
     </div>
-    <hr>
+<hr>
+
   <% end %>
 
   <%= render "devise/shared/links" %>
