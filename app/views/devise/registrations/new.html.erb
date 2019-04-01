@@ -26,25 +26,10 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password Confirmation", class: "form-control" %>
       </div>
     </div>
+
     <br>
     <div class="actions">
-      <%= f.submit "Sign up", type:"submit", class:"btn btn-warning text-white btn-lg btn-block btn-change" %>
-
-    <div class="field">
-      <p>Your Movement Match Password</p>
-      <% if @minimum_password_length %>
-      <small>(<%= @minimum_password_length %> characters minimum)</small>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-    <br>
-    <div class="actions">
-      <%= f.submit "Sign up", type:"button", class:"btn btn-outline-warning text-dark btn-lg btn-block"  %>
+      <%= f.submit "Sign up", class:"btn btn-warning text-dark btn-lg btn-block"  %>
     </div>
   <br>
     <% end %>
