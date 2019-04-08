@@ -45,7 +45,6 @@ img {
   color: #ef5f5e;
   background: white;
 }
-
 .btn-change{
   border:0px;
   box-shadow: 5px 5px 5px #ffc107;
@@ -353,6 +352,12 @@ img {
 @media screen and (min-width: 768px){
   .images {
     grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+  .logo {
+    margin-bottom: -100px;
+  }
+  .col-md-7 {
+    max-width: 75%;
   }
 }
 
