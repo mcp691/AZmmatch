@@ -89,7 +89,7 @@ img {
     margin: auto !important;
     width: 768px !important;
   }
-} */ 
+} */
 
 /* footer */
 .footer
@@ -370,7 +370,12 @@ img {
   .logo {
     margin-bottom: -100px;
   }
+  #hide-photo {
+    display: none;
+  }
 }
+
+
 
 @media screen and (min-width: 992px){
   .images {
