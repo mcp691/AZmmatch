@@ -14,8 +14,8 @@
         <p>Location: <%= organization.city %></p>
       <% end %>
       <% if current_user_org == organization.user_org %>
-      <%= link_to 'Edit', edit_organization_path(organization) %> |
-      <%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_organization_path(organization), class:"btn btn-warning text-white" %> |
+      <%= link_to 'Delete', organization, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white" %>
       <% end %>
     </div>
   </div>
