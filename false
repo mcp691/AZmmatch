@@ -1,0 +1,2 @@
+      invoke  active_record
+    conflict    db/migrate/20190706181737_add_claimed_to_organizations.rb

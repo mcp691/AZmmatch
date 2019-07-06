@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_18_015757) do
+ActiveRecord::Schema.define(version: 2019_07_06_182810) do
 
   create_table "organizations", force: :cascade do |t|
     t.integer "user_org_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_12_18_015757) do
     t.string "commitment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "claimed", default: false
     t.index ["user_org_id"], name: "index_organizations_on_user_org_id"
   end
 
