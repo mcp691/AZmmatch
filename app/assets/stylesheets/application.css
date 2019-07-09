@@ -100,12 +100,16 @@ img {
 }
 
 .footer
-ul {
+ul
+.modalLink {
   width: auto;
-  background-color: white;
   margin-top: 20px;
-  margin-bottom: 0;
   text-align: center;
+}
+
+.footer
+ul {
+  padding-left: 0px;
 }
 
 .footer
@@ -120,6 +124,14 @@ a {
 }
 /* end footer */
 /* modal */
+.terms-modal {
+  text-align: left !important;
+}
+
+.terms-modal-dialog {
+  max-width: 90% !important;
+}
+
 .modal-content
 .modal-header
 button {
@@ -133,6 +145,7 @@ button {
 /*  about modal */
 .modal-title {
   color: #ef5f5e;
+  text-align: center;
 }
 
 .modal-body
