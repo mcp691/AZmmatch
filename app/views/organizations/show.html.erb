@@ -1,7 +1,12 @@
 <div class="container-fluid col-sm-10 col-md-7" align="center">
 
-  <h2><%= @organization.name %></h2>
-  <p><a target="_blank" href="<%= @organization.website %>"><%= @organization.website %></a></p>
+  <h1><%= @organization.name %></h1>
+  <hr>
+  <% if @organization.website.include? "http" %>
+  <p><a target="_blank" class="btn btn-warning text-white btn-lg" href="<%= @organization.website %>"><%= @organization.website %></a></p>
+  <% else %>
+  <p><a target="_blank" class="btn btn-warning text-white btn-lg" href="http://<%= @organization.website %>"><%= @organization.website %></a></p>
+  <% end %>
   <p><%= @organization.mission %></p>
   <% if @organization.memberlink != "" %>
   <p>Click here to become a member of this organization: <a target="_blank" href="<%= @organization.memberlink %>"><%= @organization.memberlink %></a></p>
@@ -9,14 +14,43 @@
   <p>Visit website for membership information.</p>
   <% end %>
   <% if @organization.city == "" %>
-    <p>Inquire about location.</p>
+  <p>Inquire about location.</p>
   <% else %>
-    <p>Location: <%= @organization.city %></p>
+  <p>Location: <%= @organization.city %></p>
+  <% end %>
+
+  <% if @organization.claimed == false %>
+  <div class="container modalLink">
+    <!-- Trigger the modal with a button -->
+    <p class="modal-link btn btn-outline-warning text-dark btn-lg" data-toggle="modal", data-target="#myModal">Is this your organization? Claim it!</p>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="col-12 modal-title">Terms of Agreement for Claiming Organizations</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
+          </div>
+          <div class="modal-body">
+            <!-- This modal needs to have the terms of agreement in in -->
+            <h5>Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices ac ligula senectus, semper taciti aliquet odio placerat netus nisi vel vehicula urna, ante sociis risus dapibus integer metus duis feugiat platea dis. Tempor aliquam tristique maecenas laoreet consequat suspendisse etiam duis bibendum, cum hac euismod curabitur sapien tortor nibh blandit himenaeos, lacus metus lectus venenatis inceptos semper taciti eleifend. Suspendisse massa est dictum ultricies nibh purus himenaeos sociis posuere elementum, nec orci torquent porta mollis inceptos magnis quis faucibus in, euismod volutpat a sodales cubilia duis dignissim facilisi feugiat.</h5>
+            <%= link_to 'Claim This Organization', '#', class:"btn btn-warning text-white" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
   <% end %>
 
   <% if current_user_org == @organization.user_org %>
-  <%= link_to 'Edit', edit_organization_path(@organization) %> |
-  <%= link_to 'Delete', @organization, method: :delete, data: { confirm: 'Are you sure?' } %> |
-  <% end %>
-  <%= link_to 'Back', organizations_path %>
+  <div class="admin-tasks">
+    <%= link_to 'Edit', edit_organization_path(@organization), class:"btn btn-warning text-white" %> |
+    <%= link_to 'Delete', @organization, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger text-white" %> |
+    <% end %>
+    <%= link_to 'Back', organizations_path, class:"btn btn-outline-danger" %>
+  </div>
 </div>
