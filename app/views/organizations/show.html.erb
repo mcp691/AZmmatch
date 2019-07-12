@@ -25,22 +25,36 @@
     <p class="modal-link btn btn-outline-warning text-dark btn-lg" data-toggle="modal", data-target="#myModal">Is this your organization? Claim it!</p>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal hide fade" data-keyboard="false" data-backdrop="static" id="myModal" role="dialog">
       <div class="modal-dialog modal-dialog-centered">
 
         <!-- Modal content-->
-        <div class="modal-content">
+        <div class="modal-content terms-modal">
           <div class="modal-header">
             <h4 class="col-12 modal-title">Terms of Agreement for Claiming Organizations</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">X</button>
           </div>
           <div class="modal-body">
             <!-- This modal needs to have the terms of agreement in in -->
-            <h5>Lorem ipsum dolor sit amet consectetur adipiscing elit ultrices ac ligula senectus, semper taciti aliquet odio placerat netus nisi vel vehicula urna, ante sociis risus dapibus integer metus duis feugiat platea dis. Tempor aliquam tristique maecenas laoreet consequat suspendisse etiam duis bibendum, cum hac euismod curabitur sapien tortor nibh blandit himenaeos, lacus metus lectus venenatis inceptos semper taciti eleifend. Suspendisse massa est dictum ultricies nibh purus himenaeos sociis posuere elementum, nec orci torquent porta mollis inceptos magnis quis faucibus in, euismod volutpat a sodales cubilia duis dignissim facilisi feugiat.</h5>
-            <%= link_to 'Claim This Organization', '#', class:"btn btn-warning text-white" %>
+            <h4>Confirm and Publish</h4>
+            <p>Review the terms and options below, and then click to publish. You're almost there!</p>
+
+            <h4>Program Terms</h4>
+            <ol>
+              <li>I certify that the information is accurate and up to date</li>
+              <li>I represent this organization and can make changes on its Movement Match profile</li>
+              <li>I agree that this organization meets the Movement Match criteria:</li>
+              <ol type="a">
+                <li>A progressive organization committed to progressive values of ending oppression</li>
+                <li>A membership based organization that is actively accepting new members and has ways for new members to plug in (beyond joining an email list)</li>
+              </ol>
+              <li>I accept the Terms of Use: <%= render "terms" %></li>
+            </ol>
+            <div align="center">
+              <%= link_to 'Claim This Organization', '#', class:"btn btn-warning text-white" %>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
