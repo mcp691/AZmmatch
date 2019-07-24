@@ -50,9 +50,16 @@
               </ol>
               <li>I accept the Terms of Use: <%= render "terms" %></li>
             </ol>
+            <%= form_for(@organization) do |f| %>
             <div align="center">
-              <%= link_to 'Claim This Organization', '#', class:"btn btn-warning text-white" %>
+              <label class="container container-check">
+                <p><%= f.check_box :claimed %> I agree to these terms.</p>
+                <p>I verify that I can claim this organization.</p>
+                <span class="checkmark"></span>
+              </label>
+              <%= f.submit "Claim This Organization", class:"btn btn-warning text-white" %>
             </div>
+            <% end %>
           </div>
         </div>
       </div>

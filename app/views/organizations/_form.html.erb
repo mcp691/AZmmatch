@@ -119,6 +119,9 @@
       <h5>We're seeking members who can commit at least a few hours...</h5>
       <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select form-control", aria_label: "With textarea" %>
     </div>
+    <div class="container container-check" style="margin-top:5%;">
+      <p><%= form.check_box :claimed %> I agree to the terms of use and I claim this organization. <%= render "terms" %></p>
+    </div>
   </div>
   <br>
   <div class="actions"><%= form.submit "Submit", class:"btn btn-warning text-white btn-lg btn-block" %></div>
