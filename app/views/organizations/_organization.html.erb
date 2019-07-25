@@ -1,7 +1,7 @@
-  <div class="card org-container" style="width: 30rem;">
-    <h2 class="card-header"><%= link_to organization.name, organization %></h2>
-    <div class="card-body">
-      <p><%= organization.mission %></p>
+  <div class="list-group-item list-group-item-action">
+    <h2><%= link_to organization.name, organization %></h2>
+    <div>
+      <p><%= organization.other %></p>
       <% if organization.memberlink != "" %>
       <p>Click here to become a member of this organization: <a target="_blank" href="<%= organization.memberlink %>"><%= organization.memberlink %></a></p>
       <% else %>

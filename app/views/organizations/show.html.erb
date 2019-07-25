@@ -7,8 +7,14 @@
   <% else %>
   <p><a target="_blank" class="btn btn-warning text-white btn-lg" href="http://<%= @organization.website %>"><%= @organization.website %></a></p>
   <% end %>
-  <p><%= @organization.mission %></p>
+  <% if @organization.mission != "" %>
+  <div class="card card-body">
+    <h4>Our Mission:</h4>
+    <p><%= @organization.mission %></p>
+  </div>
+  <% end %>
   <% if @organization.memberlink != "" %>
+  <br>
   <p>Click here to become a member of this organization: <a target="_blank" href="<%= @organization.memberlink %>"><%= @organization.memberlink %></a></p>
   <% else %>
   <p>Visit website for membership information.</p>
@@ -54,7 +60,6 @@
             <div align="center">
               <label class="container container-check">
                 <p><%= f.check_box :claimed %> I agree to these terms.</p>
-                <p>I verify that I can claim this organization.</p>
                 <span class="checkmark"></span>
               </label>
               <%= f.submit "Claim This Organization", class:"btn btn-warning text-white" %>
