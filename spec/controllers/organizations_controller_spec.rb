@@ -15,7 +15,7 @@ RSpec.describe OrganizationsController, type: :controller do
   end
 
   context 'GET #new' do
-    it 'renders the new organizations form page' do
+    it 'renders the new organizations form page when user logged in' do
       sign_in @user
       get :new
       expect(response).to be_ok
@@ -24,10 +24,10 @@ RSpec.describe OrganizationsController, type: :controller do
   end
 
   context 'GET #new' do
-    it 'does not render new organizations form if user not logged in' do
+    it 'redirects to login screen if user not logged in' do
       get :new
       expect(response).not_to be_ok
-      expect(response).not_to render_template(:new)
+      expect(response).to redirect_to(new_user_org_session_path)
     end
   end
 
