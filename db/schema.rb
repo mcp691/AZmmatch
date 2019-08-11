@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_184408) do
+ActiveRecord::Schema.define(version: 2019_07_25_144600) do
 
   create_table "organizations", force: :cascade do |t|
     t.integer "user_org_id"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_184408) do
     t.string "website"
     t.text "mission"
     t.string "memberlink"
-    t.text "other"
+    t.text "summary"
     t.string "city"
     t.text "issues"
     t.string "gender"

@@ -24,20 +24,19 @@
     </div>
   </div>
 
+  <div class="field">
+    A summary or a call to action:
+    <%= form.text_area :summary, class: "form-control", rows: "4", :maxlength => 600 %>
+  </div>
 
   <div class="field">
     What is your mission statement?
-    <%= form.text_area :mission, class: "form-control", rows: "6" %>
+    <%= form.text_area :mission, class: "form-control", rows: "6", :maxlength => 600 %>
   </div>
 
   <div class="field">
     Membership link:
     <%= form.text_field :memberlink, class: "form-control", placeholder: "www.myorganization.com/join" %>
-  </div>
-
-  <div class="field">
-    Other information you want people to have:
-    <%= form.text_area :other, class: "form-control", rows: "4" %>
   </div>
 
   <div class="field">
@@ -118,6 +117,9 @@
       <hr>
       <h5>We're seeking members who can commit at least a few hours...</h5>
       <%= form.select :commitment, ["per day", "per week", "per month", "per year", "doesn't matter"], {}, class: "custom-select form-control", aria_label: "With textarea" %>
+    </div>
+    <div class="container container-check" style="margin-top:5%;">
+      <p><%= form.check_box :claimed %> I agree to the terms of use and I claim this organization. <%= render "terms" %></p>
     </div>
   </div>
   <br>
