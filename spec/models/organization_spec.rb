@@ -14,12 +14,4 @@ RSpec.describe Organization, type: :model do
     expect(Organization.new(name: "Organization Name", user_org: @user, claimed: true)).not_to be_valid
   end
 
-  it "is not valid without a user" do
-    expect(Organization.new(name: "Organization Name", issues: "This is an issue", claimed: true)).not_to be_valid
-  end
-
-  it "is not valid without agreeing to claim" do
-    expect(Organization.new(name: "Organization Name", issues: "This is an issue",  user_org: @user, claimed: false)).not_to be_valid
-  end
-
 end
