@@ -2,7 +2,7 @@
 
   <h1><%= @organization.name %></h1>
   <hr>
-  <% if @organization.website.include? "http" %>
+  <% if @organization.website&.include? "http" %>
   <p><a target="_blank" class="btn btn-warning text-white btn-lg" href="<%= @organization.website %>"><%= @organization.website %></a></p>
   <% else %>
   <p><a target="_blank" class="btn btn-warning text-white btn-lg" href="http://<%= @organization.website %>"><%= @organization.website %></a></p>
@@ -25,7 +25,7 @@
   <p>Location: <%= @organization.city %></p>
   <% end %>
 
-  <% if @organization.claimed == false %>
+  <% unless @organization.claimed || current_user_org&.claimed %>
   <div class="container modalLink">
     <!-- Trigger the modal with a button -->
     <p class="modal-link btn btn-outline-warning text-dark btn-lg" data-toggle="modal", data-target="#myModal">Is this your organization? Claim it!</p>
@@ -56,15 +56,14 @@
               </ol>
               <li>I accept the Terms of Use: <%= render "terms" %></li>
             </ol>
-            <%= form_for(@organization) do |f| %>
             <div align="center">
-              <label class="container container-check">
-                <p><%= f.check_box :claimed %> I agree to these terms.</p>
-                <span class="checkmark"></span>
-              </label>
-              <%= f.submit "Claim This Organization", class:"btn btn-warning text-white" %>
+              <p>By clicking 'Claim this Organization' I agree to these terms.</p>
+              <%= link_to claim_organization_path(@organization), method: :put do %>
+                <div class="btn btn-warning text-white">
+                  Claim this Organization
+                </div>
+              <% end %>
             </div>
-            <% end %>
           </div>
         </div>
       </div>
