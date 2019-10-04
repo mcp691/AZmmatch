@@ -1,6 +1,6 @@
 class OrganizationsController < ApplicationController
-  before_action :set_organization, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user_org!, only: [:create, :edit, :update, :new, :destroy]
+  before_action :set_organization, only: [:claim, :show, :edit, :update, :destroy]
+  before_action :authenticate_user_org!, only: [:claim, :create, :edit, :update, :new, :destroy]
 
   protect_from_forgery with: :exception
 
@@ -26,6 +26,17 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations/1/edit
   def edit
+  end
+
+  def claim
+    unless @organization.claimed
+      @organization.update(claimed: true, user_org: current_user_org)
+      current_user_org.update(claimed: true)
+
+      redirect_to @organization, notice: 'Organization claimed successfully.'
+    else
+      redirect_to @organization, alert: 'This organization has already been claimed.'
+    end
   end
 
   # POST /organizations

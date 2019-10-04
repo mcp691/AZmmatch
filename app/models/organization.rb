@@ -2,8 +2,6 @@ class Organization < ApplicationRecord
   belongs_to :user_org, :optional => true
   validates :name, presence: true
   validates :issues, presence: true
-  validates :user_org, presence: true
-  validates :claimed, acceptance: true
 
 =begin
   Use this code for when Quiz has been optimized for multiple selections
